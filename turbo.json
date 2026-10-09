@@ -39,7 +39,7 @@
       "dependsOn": ["^lint"],
       "inputs": ["src/**", "oxlint.config.ts", "package.json"]
     },
-    "@acme/web#dev": {
+    "@wbst/web#dev": {
       "dependsOn": ["^tsc"],
       "cache": false,
       "persistent": true

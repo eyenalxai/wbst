@@ -1,5 +1,5 @@
 {
-  "name": "acme",
+  "name": "wbst",
   "version": "0.0.1",
   "description": "A personal website.",
   "private": true,
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@types/bun": "1.4.2",
     "@types/node": "26.6.4",
-    "@acme/oxlint-config": "workspace:*",
+    "@wbst/oxlint-config": "workspace:*",
     "oxfmt": "0.72.0",
     "oxlint": "1.87.0",
     "oxlint-plugin-react-doctor": "0.9.17",

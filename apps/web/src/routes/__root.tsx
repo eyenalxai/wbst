@@ -1,5 +1,5 @@
-import globalsCss from "@acme/ui/globals.css?url"
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router"
+import globalsCss from "@wbst/ui/globals.css?url"
 
 const RootDocument = () => (
   <html lang="en">

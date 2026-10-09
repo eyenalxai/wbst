@@ -6,7 +6,7 @@
  * Only the components that an app module can reach are scanned. A package-wide
  * glob scans components that nothing imports and grows this stylesheet with
  * utilities that only those components mention.
- * `bun run --filter @acme/ui ui -- add <name>` means adding a file here.
+ * `bun run --filter @wbst/ui ui -- add <name>` means adding a file here.
  */
 @source "../../../../apps/web/src/**/*.{ts,tsx}";
 @source "../components/{alert,avatar,button,card,dropdown-menu,empty,input,item,separator,sheet,sidebar,skeleton,sonner,spinner,tooltip}.tsx";

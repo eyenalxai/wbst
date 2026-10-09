@@ -1,5 +1,5 @@
 {
-  "name": "@acme/oxlint-config",
+  "name": "@wbst/oxlint-config",
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
@@ -23,8 +23,8 @@
     "lint": "oxlint --type-aware --fix --no-error-on-unmatched-pattern"
   },
   "devDependencies": {
-    "@acme/typescript-config": "workspace:*",
     "@types/node": "26.6.4",
+    "@wbst/typescript-config": "workspace:*",
     "oxlint": "1.87.0",
     "typescript": "7.0.2"
   },
