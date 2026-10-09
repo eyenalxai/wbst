@@ -1,4 +1,4 @@
-import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router"
+import { HeadContent, Link, Outlet, Scripts, createRootRoute } from "@tanstack/react-router"
 import globalsCss from "@wbst/ui/globals.css?url"
 
 const RootDocument = () => (
@@ -13,6 +13,15 @@ const RootDocument = () => (
   </html>
 )
 
+const NotFoundPage = () => (
+  <p>
+    not found.{" "}
+    <Link className="underline" to="/">
+      go home
+    </Link>
+  </p>
+)
+
 const Route = createRootRoute({
   head: () => {
     return {
@@ -25,6 +34,7 @@ const Route = createRootRoute({
     }
   },
   component: RootDocument,
+  notFoundComponent: NotFoundPage,
 })
 
 export { Route }
