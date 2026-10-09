@@ -77,12 +77,6 @@ const frontendOverrides: OverridesConfig = [
       "no-console": "off", // Browser code logs to the browser console. There is no Effect logger there.
     },
   },
-  {
-    files: ["src/server/**/*.{ts,tsx}", "src/routes/api/**/*.{ts,tsx}"],
-    rules: {
-      "no-console": "error", // Server code logs through Effect.log.
-    },
-  },
 ]
 
 const webIgnorePatterns = [...baseIgnorePatterns, "src/components/ui/**"]

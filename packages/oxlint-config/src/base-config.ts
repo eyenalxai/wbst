@@ -89,7 +89,7 @@ const baseRules: RuleConfig = {
   "import/prefer-default-export": "off",
   "import/unambiguous": "error",
   "node/callback-return": "off", // The rule reports false positives in every case.
-  "node/no-process-env": "error", // Read config through @acme/env.
+  "node/no-process-env": "error",
   "node/no-top-level-await": "off", // Bun runs ESM natively.
   "typescript/array-type": "error",
   "typescript/consistent-type-definitions": ["error", "type"],
@@ -111,7 +111,6 @@ const baseIgnorePatterns = [
   "**/.output/**",
   "**/.tanstack/**",
   "**/.turbo/**",
-  "**/drizzle/**",
   "**/*.d.ts",
   "**/*.config.{js,ts,mjs,cjs}",
   "**/routeTree.gen.ts",
@@ -130,31 +129,7 @@ const baseOverrides: OverridesConfig = [
   },
 ]
 
-/**
- * Drizzle's schema modules are the one legitimate aggregation point. The
- * drizzle-kit config globs them, and the client passes the whole namespace to
- * `drizzle({ schema })`. The Better Auth generator emits one `export const`
- * per table, so those files cannot group exports.
- */
-const schemaFileOverrides: OverridesConfig = [
-  {
-    files: ["**/schema.ts", "**/schema/**/*.ts"],
-    rules: {
-      "import/group-exports": "off",
-      "oxc/no-barrel-file": "off",
-    },
-  },
-]
-
 const rootIgnorePatterns = [...baseIgnorePatterns, "packages/ui/src/components/**"]
 
-export {
-  baseIgnorePatterns,
-  baseOverrides,
-  basePlugins,
-  baseRules,
-  categories,
-  rootIgnorePatterns,
-  schemaFileOverrides,
-}
+export { baseIgnorePatterns, baseOverrides, basePlugins, baseRules, categories, rootIgnorePatterns }
 export type { OverridesConfig, RuleConfig }

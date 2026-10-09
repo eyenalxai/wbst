@@ -2,14 +2,7 @@ import type { OxlintConfig } from "oxlint"
 
 import type { OverridesConfig, RuleConfig } from "#base-config"
 
-import {
-  baseOverrides,
-  basePlugins,
-  baseRules,
-  categories,
-  rootIgnorePatterns,
-  schemaFileOverrides,
-} from "#base-config"
+import { baseOverrides, basePlugins, baseRules, categories, rootIgnorePatterns } from "#base-config"
 import {
   frontendJsPlugins,
   frontendOverrides,
@@ -51,7 +44,7 @@ const createOxlintConfig = ({
       builtin: true,
     },
     ignorePatterns: [...ignorePatterns],
-    overrides: [...baseOverrides, ...schemaFileOverrides, ...overrides],
+    overrides: [...baseOverrides, ...overrides],
     plugins,
     rules: {
       ...baseRules,
