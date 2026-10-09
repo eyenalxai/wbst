@@ -1,7 +1,7 @@
 # Issue tracker: Linear
 
-Issues and specs for this repository live in Linear. Use the `rata` CLI for all
-operations.
+Issues and specs for wbst live in Linear, in the ACM team. Use the `rata` CLI
+for all operations.
 
 ## Conventions
 

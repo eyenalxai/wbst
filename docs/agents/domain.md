@@ -1,6 +1,6 @@
 # Domain Docs
 
-How the engineering skills should consume this repo's domain documentation when
+How the engineering skills should consume wbst's domain documentation when
 exploring the codebase.
 
 ## Before exploring, read these
@@ -19,10 +19,9 @@ Single-context repo:
 ```
 /
 ├── GLOSSARY.md
-├── docs/adr/
-│   ├── 0001-....md
-│   └── 0002-....md
-└── src/
+└── docs/adr/
+    ├── 0001-....md
+    └── 0002-....md
 ```
 
 ## Use the glossary's vocabulary
