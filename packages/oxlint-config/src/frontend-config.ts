@@ -81,7 +81,7 @@ const frontendOverrides: OverridesConfig = [
 
 const webIgnorePatterns = [...baseIgnorePatterns, "src/components/ui/**"]
 
-const uiIgnorePatterns = [...baseIgnorePatterns, "src/components/**"]
+const uiIgnorePatterns = [...baseIgnorePatterns, "src/components/**", "src/hooks/**"]
 
 export {
   frontendJsPlugins,
