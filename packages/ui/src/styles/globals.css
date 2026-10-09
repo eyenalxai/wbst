@@ -3,9 +3,10 @@
 @import "shadcn/tailwind.css";
 
 /*
- * Only the components that an app module can reach are scanned. A package-wide
- * glob scans components that nothing imports and grows this stylesheet with
- * utilities that only those components mention.
+ * The list names the components that pages reach. The set and the list trim
+ * together after the blog, so both stay whole until then.
+ * A package-wide glob scans components that nothing imports and grows this
+ * stylesheet with utilities that only those components mention.
  * `bun run --filter @wbst/ui ui -- add <name>` means adding a file here.
  */
 @source "../../../../apps/web/src/**/*.{ts,tsx}";

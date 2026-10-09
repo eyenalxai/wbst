@@ -50,6 +50,3 @@ yarn-error.log*
 # declaration file.
 !apps/web/src/router-register.d.ts
 tsconfig.tsbuildinfo
-
-# Redis
-.redisdata

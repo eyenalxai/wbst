@@ -52,7 +52,7 @@ const baseRules: RuleConfig = {
   "sort-imports": "off", // Oxfmt owns import ordering.
   "sort-keys": "off",
   "arrow-body-style": ["error", "as-needed", { requireReturnForObjectLiteral: true }],
-  "new-cap": ["error", { properties: false }], // Effect's API uses uppercase namespaces, for example Config.String and Schema.Struct.
+  "new-cap": ["error", { properties: false }],
   "oxc/erasing-op": "error",
   "oxc/no-async-await": "off",
   "oxc/no-barrel-file": "error",
@@ -65,7 +65,7 @@ const baseRules: RuleConfig = {
   "promise/prefer-await-to-then": "error",
   "unicorn/no-array-reduce": "error",
   "unicorn/no-await-expression-member": "error",
-  "unicorn/no-null": "off", // Drizzle and React both deal in null.
+  "unicorn/no-null": "off", // React refs and context values use null.
   "unicorn/no-nested-ternary": "off",
   "unicorn/no-process-exit": "off",
   "unicorn/no-useless-collection-argument": "error",

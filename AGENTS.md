@@ -66,12 +66,7 @@ bun run --filter @wbst/ui --sequential tsc lint format
 
 ## Layout
 
-| Workspace                    | Responsibility                                                    |
-| ---------------------------- | ----------------------------------------------------------------- |
-| `apps/web`                   | The TanStack Start app. It holds the routes and the browser code. |
-| `packages/ui`                | The shadcn components and the design tokens. Browser-only.        |
-| `packages/oxlint-config`     | The shared oxlint configuration.                                  |
-| `packages/typescript-config` | The shared tsconfig presets.                                      |
+See the workspace table in [README.md](./README.md#layout).
 
 ## Non-negotiables
 
@@ -116,7 +111,8 @@ Theming follows the operating system, and there is no toggle by decision. The da
 paint. `color-scheme: light dark` on `:root` makes native controls follow the same setting.
 
 `globals.css` scans an explicit `@source` list, not the whole package. A component that you add with the CLI
-therefore renders unstyled until you name it there. The list names exactly the components that the app can reach.
+therefore renders unstyled until you name it there. The list names the components that pages reach. The set and
+the list trim together after the blog.
 
 <!-- BEGIN:turborepo-agent-rules -->
 

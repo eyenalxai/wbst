@@ -74,7 +74,7 @@ const frontendOverrides: OverridesConfig = [
   {
     files: ["src/**/*.{ts,tsx}"],
     rules: {
-      "no-console": "off", // Browser code logs to the browser console. There is no Effect logger there.
+      "no-console": "off", // Browser code logs to the browser console.
     },
   },
 ]
