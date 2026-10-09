@@ -1,7 +1,7 @@
 {
   "name": "acme",
   "version": "0.0.1",
-  "description": "A full-stack web-app starter with no product domain: TanStack Start, Effect, oRPC, Drizzle and Better Auth.",
+  "description": "A personal website.",
   "private": true,
   "license": "MIT",
   "workspaces": [
@@ -16,27 +16,18 @@
     "tsc": "turbo run tsc",
     "lint": "turbo run lint",
     "format": "turbo run format",
-    "check": "turbo run format lint tsc",
-    "db:generate": "turbo run db:generate",
-    "db:migrate": "turbo run db:migrate",
-    "db:push": "turbo run db:push",
-    "db:studio": "turbo run db:studio",
-    "auth:generate": "turbo run auth:generate",
-    "up": "docker compose up -d",
-    "down": "docker compose down"
+    "check": "turbo run format lint tsc"
   },
   "devDependencies": {
     "@types/bun": "1.4.2",
     "@types/node": "26.6.4",
-    "@varlock/1password-plugin": "2.0.4",
     "@acme/oxlint-config": "workspace:*",
     "oxfmt": "0.72.0",
     "oxlint": "1.87.0",
     "oxlint-plugin-react-doctor": "0.9.17",
     "oxlint-tsgolint": "7.0.2003",
     "turbo": "2.11.7",
-    "typescript": "7.0.2",
-    "varlock": "1.21.1"
+    "typescript": "7.0.2"
   },
   "engines": {
     "bun": "1.4.2"

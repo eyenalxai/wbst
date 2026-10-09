@@ -2,7 +2,6 @@
   "$schema": "https://turborepo.com/schema.json",
   "ui": "tui",
   "globalDependencies": [
-    ".env.schema",
     "oxlint.config.ts",
     "packages/oxlint-config/src/**",
     "packages/oxlint-config/package.json",
@@ -10,7 +9,7 @@
     "apps/*/oxlint.config.ts",
     "packages/*/oxlint.config.ts"
   ],
-  "globalEnv": ["NODE_ENV", "APP_ENV", "VARLOCK_ENV"],
+  "globalEnv": ["NODE_ENV"],
   "globalPassThroughEnv": ["PORTLESS"],
   "tasks": {
     "dev": {
@@ -39,23 +38,6 @@
     "lint": {
       "dependsOn": ["^lint"],
       "inputs": ["src/**", "oxlint.config.ts", "package.json"]
-    },
-    "db:generate": {
-      "cache": false
-    },
-    "db:migrate": {
-      "cache": false
-    },
-    "db:push": {
-      "cache": false
-    },
-    "db:studio": {
-      "cache": false,
-      "persistent": true
-    },
-    "auth:generate": {
-      "cache": false,
-      "outputs": ["src/database/schema/auth.generated.ts"]
     },
     "@acme/web#dev": {
       "dependsOn": ["^tsc"],

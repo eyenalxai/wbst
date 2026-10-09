@@ -6,14 +6,6 @@ node_modules
 .pnp.js
 install-state.gz
 
-# Local env files. `.env.schema` declares and validates every variable, and
-# `.env.development` holds the development origin. Both files are committed.
-# Every other `.env.*` file holds machine-local values and is never committed.
-.env
-.env.*
-!.env.schema
-!.env.development
-
 # Testing
 coverage
 
@@ -53,17 +45,11 @@ yarn-error.log*
 
 # TypeScript. Build-generated declaration files are never committed.
 **/*.d.ts
-# Exception: varlock's schema types are an input, not an output. Committing them
-# removes a build-ordering dependency for every package that imports @acme/env.
-!packages/env/src/env.d.ts
 # Exception: only module augmentation can widen TanStack Router's `Register`
 # interface. Augmentation requires `interface` syntax, and that syntax requires a
 # declaration file.
 !apps/web/src/router-register.d.ts
 tsconfig.tsbuildinfo
-
-# Postgres
-.pgdata
 
 # Redis
 .redisdata
