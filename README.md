@@ -1,47 +1,46 @@
-# acme
+# wbst
 
-A full-stack web-app starter with no product domain. TanStack Start and React 19 run in
-the browser. Effect v4, oRPC, Drizzle and Better Auth run on the server. varlock manages
-the environment, shadcn/ui provides the components, and Bun and Turbo provide the
-tooling. The Notes example is the end-to-end reference that shows how to wire a
-feature. [AGENTS.md](./AGENTS.md) is the operating manual, [GLOSSARY.md](./GLOSSARY.md)
-holds the domain vocabulary, and [docs/adr](./docs/adr) holds the decisions.
+wbst is a personal website. TanStack Start and React run the app, Tailwind and the
+shadcn/ui components give it a design system, and Bun and Turborepo provide the
+tooling.
+[AGENTS.md](./AGENTS.md) is the operating manual, and [docs/adr](./docs/adr) holds
+the decisions.
+
+The site is intentionally bare: it renders one page that says `hello`. The blog
+comes later, and the ui package already holds the full component set for it.
 
 ## Requirements
 
 - Bun 1.4.2
-- Docker, for the local Postgres
 
 ## Quickstart
 
 ```bash
 bun install
-bun run up             # Postgres on host port 5434
-bun run db:migrate     # apply migrations
-bun dev                # https://acme.localhost via portless
+bun dev                # https://wbst.localhost via portless
 ```
 
-`PORTLESS=0 bun dev` bypasses portless. Vite then serves http://localhost:3000, which is
-not `APP_URL`.
-
-## Secrets
-
-Every variable is declared in [.env.schema](./.env.schema). Secrets and machine-specific
-values go in a gitignored `.env.local`, which varlock validates on load. Staging and
-production receive every value as an injected environment variable. `bunx varlock load`
-checks the current environment. `bunx varlock load --agent` prints the environment as
-redacted JSON. The full arrangement is in [AGENTS.md](./AGENTS.md#environment): which
-file wins, and which commands can reach 1Password.
-
-## GitHub sign-in
-
-Create a GitHub OAuth app with the callback URL
-`${APP_URL}/api/auth/callback/github`. In development, `APP_URL` is
-`https://acme.localhost`. Put the app credentials in `.env.local` as `GITHUB_CLIENT_ID`
-and `GITHUB_CLIENT_SECRET`.
+`PORTLESS=0 bun dev` bypasses portless. Vite then serves `http://localhost:3000`.
 
 ## Checks
 
 ```bash
 bun run check          # format, lint and typecheck every workspace
+bun run build          # production build of the app
 ```
+
+## Layout
+
+| Workspace                    | Responsibility                                                    |
+| ---------------------------- | ----------------------------------------------------------------- |
+| `apps/web`                   | The TanStack Start app. It holds the routes and the browser code. |
+| `packages/ui`                | The shadcn components and the design tokens. Browser-only.        |
+| `packages/oxlint-config`     | The shared oxlint configuration.                                  |
+| `packages/typescript-config` | The shared tsconfig presets.                                      |
+
+## What wbst deliberately lacks
+
+wbst holds no database, no auth, no server stack, no Effect, no oRPC and no
+environment variables. A personal website and its future blog do not need them. A
+feature that does need a server adds one; see
+[ADR 0001](./docs/adr/0001-wbst-carries-no-server-stack.md).
